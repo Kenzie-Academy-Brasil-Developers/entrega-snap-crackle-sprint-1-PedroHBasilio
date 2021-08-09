@@ -18,7 +18,8 @@ function prime(n){
 }
 
 function snapCrackle (maxValue){
-    let snap = ""
+    let snap = []
+    let newSnap
     for(let i = 1; i <= maxValue; i++){
 
         if(imparNumber(i)){
@@ -33,10 +34,12 @@ function snapCrackle (maxValue){
         if(imparNumber(i) !== true && multiploCinco(i) !== true && prime(i) !== true) {
             snap += `${i}`
         }
-        snap += ", "  
+        snap += " "  
     }
-    return snap 
-    //console.log(snap.length - 1)
+    newSnap = snap.split(" ")
+    newSnap.pop()
+    return newSnap.join(", ")
 }
 
 console.log(snapCrackle(20))
+
